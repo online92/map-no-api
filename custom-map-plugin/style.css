@@ -1,0 +1,151 @@
+.map-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensuring responsive layout on smaller screens */
+    gap: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.location-list {
+    width: 35%; /* Takes 35% of container width */
+    max-height: 400px; /* Limit height and add scroll if needed */
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.location-item {
+    cursor: pointer;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row; /* Display image and content horizontally */
+    align-items: center;
+    gap: 10px;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-item:hover, .location-item.active {
+    background-color: #f0f8ff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.location-item.active {
+    border-left: 4px solid #4285F4;
+}
+
+.location-image {
+    flex: 0 0 80px; /* Fixed width for the image container */
+}
+
+.location-image img {
+    width: 80px; /* Image size */
+    height: 80px;
+    object-fit: cover; /* Ensure image isn't distorted */
+    border-radius: 5px;
+}
+
+.location-info {
+    flex: 1; /* Take remaining space */
+}
+
+/* Custom text color styling for each element */
+.location-name {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #D81B60; /* Pink/raspberry color for the name */
+    font-weight: bold;
+}
+
+.location-address {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #1976D2; /* Blue color for the address */
+}
+
+.location-phone {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #43A047; /* Green color for phone number section */
+}
+
+.location-phone a {
+    color: #43A047; /* Green color for the phone number link */
+    text-decoration: none; /* Remove underline from link */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.location-phone a:hover {
+    color: #2E7D32; /* Darker green on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.location-info i {
+    margin-right: 5px;
+    color: #4285F4;
+}
+
+.directions-btn {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background-color: #FF5722; /* Attractive orange color for directions button */
+    color: white;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none; /* Remove underline from link */
+}
+
+.directions-btn:hover {
+    background-color: #E64A19; /* Darker orange on hover */
+    text-decoration: none; /* Ensure no underline appears on hover */
+}
+
+.directions-btn i {
+    color: white;
+    margin-right: 3px;
+}
+
+#map {
+    width: calc(65% - 20px); /* Takes remaining space (65%) minus gap */
+    height: auto; /* Automatic height adjustment */
+}
+
+iframe {
+    width: 100%;
+    height: 400px; /* Map height */
+    border-radius: 5px; /* Rounded corners for iframe */
+    border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .map-container {
+        flex-direction: column;
+    }
+    
+    .location-list, #map {
+        width: 100%;
+    }
+    
+    .location-list {
+        max-height: 300px;
+    }
+}
+
+/* Admin styles */
+.button-danger {
+    color: #a00 !important;
+}
+
+.button-danger:hover {
+    color: #dc3232 !important;
+}
